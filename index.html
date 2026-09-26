@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Jessica 💖</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@500;600;700&display=swap');
+
+:root{
+  --pink:#ff4fa3;
+  --hot:#ff2f7d;
+  --purple:#7b2cff;
+  --deep:#17051c;
+  --rose:#d98b9c;
+  --gold:#e9b873;
+  --cream:#fff4f7;
+}
+*{box-sizing:border-box}
+html,body{margin:0;min-height:100%;font-family:"Playfair Display",Georgia,serif;background:
+radial-gradient(circle at 20% 10%,#5b0b66 0,transparent 35%),
+radial-gradient(circle at 80% 80%,#7b124e 0,transparent 35%),
+linear-gradient(135deg,#100414,#25061f 45%,#120315);color:#fff;overflow-x:hidden;scroll-behavior:smooth}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;background:
+linear-gradient(120deg,transparent 0 48%,rgba(255,255,255,.04) 49%,transparent 51%);opacity:.5}
+.page{display:none;animation:pageIn .55s ease both;min-height:100vh;padding:34px 18px 90px;position:relative;z-index:2}
+.page.active{display:flex;flex-direction:column;align-items:center}
+.card{width:min(100%,980px);background:rgba(25,5,28,.68);border:1px solid rgba(233,184,115,.35);
+box-shadow:0 20px 80px rgba(0,0,0,.45),inset 0 1px rgba(255,255,255,.08);backdrop-filter:blur(12px);
+border-radius:28px;padding:28px}
+.glow{color:#fff;text-shadow:0 0 8px #fff,0 0 25px #ff4fa3,0 0 50px #8b3dff}
+.script{font-family:"Great Vibes",cursive}
+h1{font-size:clamp(48px,9vw,92px);margin:10px 0 0;line-height:1.05}
+h2{font-size:clamp(28px,5vw,48px);margin:10px 0 18px}
+h3{font-size:25px;color:#ffd8e8}
+p{font-size:18px;line-height:1.8;color:#ffeaf2}
+.small{font-size:14px;opacity:.8}
+.center{text-align:center}
+.gold{color:#ffd38e}
+.btn{border:1px solid rgba(255,255,255,.25);background:linear-gradient(135deg,#ff4fa3,#7b2cff);
+color:white;padding:13px 22px;border-radius:999px;font-weight:700;cursor:pointer;font-size:16px;
+box-shadow:0 10px 30px rgba(255,47,125,.25);transition:.25s;margin:5px}
+.btn:active{transform:scale(.97)}
+.btn:hover{transform:translateY(-2px) scale(1.02);box-shadow:0 14px 35px rgba(255,79,163,.4)}
+.btn.goldbtn{background:linear-gradient(135deg,#d88b9c,#e9b873);color:#2a0c20}
+input{width:100%;padding:15px 16px;border-radius:14px;border:1px solid rgba(255,255,255,.2);
+background:rgba(255,255,255,.08);color:#fff;font-size:17px;outline:none;margin:7px 0}
+input::placeholder{color:#d8bfc9}
+.login{width:min(100%,460px);margin:auto}
+.lock{font-size:64px;filter:drop-shadow(0 0 18px rgba(255,79,163,.65));animation:lockPulse 2.2s ease-in-out infinite}
+.error{min-height:25px;color:#ff9fbd;margin:7px}
+.hero-img{width:min(100%,900px);max-height:65vh;object-fit:contain;border-radius:24px;border:1px solid rgba(233,184,115,.45);
+box-shadow:0 15px 60px rgba(0,0,0,.5);cursor:zoom-in}
+.gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:16px}
+.gallery img{width:100%;height:220px;object-fit:cover;border-radius:18px;border:1px solid rgba(233,184,115,.3);
+cursor:zoom-in;transition:.3s;box-shadow:0 10px 30px rgba(0,0,0,.35)}
+.gallery img:hover{transform:scale(1.02)}
+.video-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px}
+video{width:100%;border-radius:20px;border:1px solid rgba(233,184,115,.3);background:#000;box-shadow:0 12px 40px rgba(0,0,0,.45)}
+.nav{position:fixed;bottom:14px;left:50%;transform:translateX(-50%);z-index:50;
+display:flex;gap:6px;flex-wrap:wrap;justify-content:center;width:min(96%,760px);padding:9px;
+background:rgba(15,3,19,.82);border:1px solid rgba(255,255,255,.12);border-radius:999px;backdrop-filter:blur(15px)}
+.nav button{border:0;background:rgba(255,255,255,.08);color:#fff;border-radius:999px;padding:9px 12px;cursor:pointer}
+.nav button:hover{background:rgba(255,79,163,.25)}
+.counter-box{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:20px}
+.counter{background:rgba(255,255,255,.05);padding:16px;border-radius:18px;border:1px solid rgba(255,255,255,.1)}
+.counter strong{display:block;font-size:30px;color:#ffd38e}
+.repeats{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px}
+.repeat-card{padding:20px;border-radius:18px;background:linear-gradient(145deg,rgba(255,79,163,.1),rgba(123,44,255,.1));
+border:1px solid rgba(233,184,115,.22)}
+.repeat-card div{padding:6px 0;border-bottom:1px dashed rgba(255,255,255,.08)}
+.poetry{font-size:23px;line-height:2.2;text-align:center;color:#ffe6f0;padding:20px;border-radius:20px;
+background:rgba(255,255,255,.045);margin:14px 0}
+.rose{color:#ffc0d8}
+.footer-msg{font-size:21px;line-height:2;text-align:center;color:#ffe6f0}
+.modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,.88);z-index:100;align-items:center;justify-content:center;padding:20px}
+.modal.show{display:flex}
+.modal img{max-width:95vw;max-height:90vh;object-fit:contain;border-radius:16px;box-shadow:0 0 80px rgba(255,79,163,.25)}
+.close{position:fixed;right:20px;top:15px;font-size:35px;color:white;cursor:pointer}
+.home-menu{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:24px 0}.menu-card{padding:18px;border-radius:20px;background:linear-gradient(145deg,rgba(255,79,163,.14),rgba(123,44,255,.12));border:1px solid rgba(255,255,255,.12);cursor:pointer;transition:.3s}.menu-card:hover{transform:translateY(-5px);box-shadow:0 12px 35px rgba(255,79,163,.18)}.menu-icon{font-size:34px;display:block;margin-bottom:7px}.birthday-note{padding:24px;border-radius:24px;background:linear-gradient(135deg,rgba(255,79,163,.15),rgba(233,184,115,.10));border:1px solid rgba(233,184,115,.3);box-shadow:inset 0 1px rgba(255,255,255,.08);margin:20px 0}.birthday-note p{font-size:clamp(19px,3vw,26px);line-height:1.65;color:#fff4f7;margin:0}.pager{display:flex;justify-content:center;gap:8px;flex-wrap:wrap;margin-top:24px}.surprise{position:relative;overflow:hidden}.surprise:after{content:"";position:absolute;inset:-40%;background:conic-gradient(from 0deg,transparent,rgba(255,255,255,.12),transparent 25%);animation:shine 5s linear infinite;pointer-events:none}.float{position:fixed;top:-60px;z-index:1;pointer-events:none;animation:fly linear forwards;opacity:.9}
+@keyframes pageIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+@keyframes lockPulse{0%,100%{transform:scale(1)}50%{transform:scale(1.08)}}
+@keyframes shine{to{transform:rotate(360deg)}}
+@keyframes fly{0%{transform:translateY(0) translateX(0) rotate(0deg);opacity:0}10%{opacity:1}50%{transform:translateY(50vh) translateX(80px) rotate(25deg)}100%{transform:translateY(110vh) translateX(-70px) rotate(-25deg);opacity:0}}
+.confetti{position:fixed;top:-20px;z-index:70;pointer-events:none;width:9px;height:16px;animation:fall 3.2s linear forwards}
+@keyframes fall{to{transform:translateY(110vh) rotate(720deg);opacity:0}}
+
+/* Cinematic birthday experience */
+#intro{display:flex;align-items:center;justify-content:center;overflow:hidden;background:
+ radial-gradient(circle at 50% 20%,rgba(99,116,255,.28),transparent 28%),
+ radial-gradient(circle at 20% 80%,rgba(255,79,163,.18),transparent 32%),
+ linear-gradient(180deg,#020516,#07153b 58%,#13051e);}
+#intro:before{content:"";position:absolute;inset:0;background-image:
+ radial-gradient(circle at 8% 18%,#fff 0 1px,transparent 2px),radial-gradient(circle at 24% 72%,#fff 0 1px,transparent 2px),
+ radial-gradient(circle at 41% 30%,#fff 0 1.2px,transparent 2px),radial-gradient(circle at 61% 12%,#fff 0 1px,transparent 2px),
+ radial-gradient(circle at 79% 36%,#fff 0 1.2px,transparent 2px),radial-gradient(circle at 91% 74%,#fff 0 1px,transparent 2px),
+ radial-gradient(circle at 53% 82%,#fff 0 1px,transparent 2px),radial-gradient(circle at 15% 48%,#fff 0 1px,transparent 2px);
+ background-size:100% 100%;opacity:.75;animation:twinkle 3s ease-in-out infinite alternate;}
+.intro-moon{position:absolute;top:10%;right:10%;width:120px;height:120px;border-radius:50%;background:#fff7cf;box-shadow:0 0 25px #fff,0 0 90px rgba(255,239,173,.5);opacity:.9}
+.intro-moon:after{content:"";position:absolute;width:112px;height:112px;border-radius:50%;background:#07153b;left:22px;top:-8px}
+.intro-wrap{position:relative;z-index:2;width:min(92%,760px);text-align:center;padding:50px 20px}
+.intro-kicker{font-size:clamp(20px,3vw,30px);letter-spacing:.12em;text-transform:uppercase;color:#c9d4ff;opacity:.9}
+.intro-title{font-family:"Great Vibes",cursive;font-size:clamp(58px,12vw,125px);line-height:.95;margin:22px 0;color:#fff;text-shadow:0 0 12px #fff,0 0 30px #8195ff,0 0 70px #ff4fa3;animation:titleGlow 2.8s ease-in-out infinite alternate}
+.intro-sub{font-size:clamp(21px,4vw,34px);line-height:1.5;color:#ffeaf5;min-height:3em}
+.enter-btn{font-size:18px;padding:16px 34px;margin-top:24px;background:linear-gradient(135deg,#ffd98a,#ff4fa3 55%,#7b2cff);border:1px solid rgba(255,255,255,.5);box-shadow:0 0 30px rgba(255,79,163,.4),0 0 80px rgba(126,112,255,.22)}
+#login.cinematic-login{background:radial-gradient(circle at 50% 20%,rgba(91,11,102,.5),transparent 35%),linear-gradient(180deg,#09051b,#18061d)}
+.login-transition{animation:cinematicIn 1s ease both}
+.countdown-wrap{margin:24px auto;max-width:760px}
+.countdown-title{font-size:15px;letter-spacing:.18em;text-transform:uppercase;color:#ffcce1}
+.countdown{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:12px}
+.countdown .counter{padding:14px 8px}
+.countdown strong{font-size:clamp(26px,5vw,44px)}
+.letter{max-width:760px;margin:24px auto 0;padding:28px;border-radius:24px;background:linear-gradient(145deg,rgba(255,255,255,.08),rgba(255,79,163,.08));border:1px solid rgba(233,184,115,.28);text-align:left}
+.letter-paper{background:rgba(255,248,239,.96);color:#42152b;border-radius:18px;padding:30px;box-shadow:0 15px 45px rgba(0,0,0,.28);font-family:Georgia,serif;line-height:1.9;min-height:220px}
+.letter-paper h3{color:#8f3158;margin-top:0;font-family:"Great Vibes",cursive;font-size:42px}
+.typing{white-space:pre-wrap}
+.cake-area{margin:25px auto 5px;display:flex;flex-direction:column;align-items:center}
+.cake{position:relative;width:210px;height:145px;margin:25px auto 10px;cursor:pointer;filter:drop-shadow(0 15px 25px rgba(0,0,0,.4));transition:.3s}
+.cake:hover{transform:translateY(-5px) scale(1.02)}
+.cake-base{position:absolute;bottom:0;left:10px;width:190px;height:82px;border-radius:18px 18px 25px 25px;background:linear-gradient(#ffb6cf,#ff5d9e);box-shadow:inset 0 -12px rgba(154,27,93,.2)}
+.cake-top{position:absolute;bottom:58px;left:10px;width:190px;height:35px;border-radius:50%;background:#fff0f6;box-shadow:0 6px 0 #ff8bbb}
+.candle{position:absolute;bottom:91px;width:12px;height:48px;border-radius:5px;background:linear-gradient(90deg,#fff,#ffd36b,#fff);z-index:2}
+.c1{left:65px}.c2{left:99px}.c3{left:133px}
+.flame{position:absolute;bottom:137px;width:16px;height:22px;background:#ffd66b;border-radius:50% 50% 45% 45%;box-shadow:0 0 15px #ffd66b,0 0 30px #ff8b3d;animation:flame 1s ease-in-out infinite alternate;z-index:3}
+.f1{left:63px}.f2{left:97px}.f3{left:131px}
+.gift{margin:25px auto;padding:18px 26px;border-radius:22px;background:linear-gradient(135deg,#7b2cff,#ff4fa3);display:inline-block;cursor:pointer;font-size:50px;box-shadow:0 15px 35px rgba(123,44,255,.3);transition:.3s}
+.gift:hover{transform:translateY(-4px) rotate(-2deg) scale(1.04)}
+.gift-message{display:none;max-width:700px;margin:10px auto;padding:24px;border-radius:20px;border:1px solid rgba(233,184,115,.35);background:rgba(255,255,255,.07);animation:pageIn .6s ease both}
+.gift-message.show{display:block}
+.gallery img{position:relative}
+.photo-hint{text-align:center;color:#ffd8e8;font-size:14px;margin-top:8px}
+@keyframes twinkle{from{opacity:.48}to{opacity:.95}}
+@keyframes titleGlow{from{filter:brightness(.95)}to{filter:brightness(1.15)}}
+@keyframes cinematicIn{from{opacity:0;transform:scale(1.03)}to{opacity:1;transform:none}}
+@keyframes flame{from{transform:scale(.9) translateY(1px)}to{transform:scale(1.08) translateY(-2px)}}
+@media(max-width:700px){
+ .countdown{grid-template-columns:repeat(2,1fr)}.intro-moon{width:75px;height:75px;right:7%;top:7%}.intro-moon:after{width:70px;height:70px;left:15px;top:-5px}.letter-paper{padding:20px}.cake{transform:scale(.9)}
+}
+@media(max-width:700px){
+ .page{padding:14px 8px 112px}.card{padding:18px 12px;border-radius:20px;width:100%}
+ .hero-img{max-height:58vh}.gallery{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.gallery img{height:170px}.video-grid{grid-template-columns:1fr}.poetry{font-size:18px;line-height:1.9;padding:16px}.home-menu{grid-template-columns:repeat(2,1fr);gap:10px}.menu-card{padding:14px}.nav{width:calc(100% - 12px);bottom:7px;border-radius:18px;padding:7px 5px;gap:4px}.nav button{padding:8px 8px;font-size:11px}.btn{min-height:44px}.counter-box{grid-template-columns:1fr}.footer-msg{font-size:18px;line-height:1.8}
+}
+@media(max-width:380px){.home-menu{grid-template-columns:1fr}.gallery img{height:145px}.nav button{font-size:10px;padding:7px 6px}}
+</style>
+</head>
+<body>
+
+<!-- CINEMATIC OPENING -->
+<section id="intro" class="page active">
+  <div class="intro-moon"></div>
+  <div class="intro-wrap">
+    <div class="intro-kicker">A little midnight surprise</div>
+    <div class="intro-title">Tonight isn't an ordinary night…</div>
+    <div id="introLine" class="intro-sub">Because someone very special was born. ✨</div>
+    <button class="btn enter-btn" onclick="enterExperience()">Enter My Birthday Story 💖</button>
+  </div>
+</section>
+
+<!-- LOGIN -->
+<section id="login" class="page cinematic-login">
+  <div class="login card center">
+    <div class="lock">🔐</div>
+    <div class="script gold" style="font-size:50px">A little surprise</div>
+    <h2 class="glow">For Jessica 💖</h2>
+    <p>Someone special prepared a little world of memories, prayers and love just for you. ✨</p>
+    <input id="username" autocomplete="off" placeholder="Username">
+    <input id="password" type="password" autocomplete="current-password" placeholder="Secret password">
+    <label class="small" style="display:block;text-align:left;margin:4px 2px"><input id="showPass" type="checkbox" style="width:auto;margin-right:7px;vertical-align:middle" onchange="togglePassword()"> Show password</label>
+    <button class="btn goldbtn" onclick="unlock()">Open My Surprise ✨</button>
+    <div id="loginError" class="error"></div>
+    <p class="small">This page works locally in your browser.</p>
+  </div>
+</section>
+
+<!-- PAGE 1: HOME / MENU -->
+<section id="p1" class="page">
+  <div class="card center">
+    <div class="script gold" style="font-size:54px">Welcome to your surprise</div>
+    <h1 class="glow">Happy Birthday, Jessica 💖</h1>
+    <p>Choose a little chapter below and enjoy every moment. 🌸✨</p>
+    
+      <span>Days</span></div>
+        <div class="counter"><strong id="hours">--</strong><span>Hours</span></div>
+        <div class="counter"><strong id="minutes">--</strong><span>Minutes</span></div>
+        <div class="counter"><strong id="seconds">--</strong><span>Seconds</span></div>
+      </div>
+      <div class="small" style="margin-top:8px">Your next birthday celebration ✨</div>
+    </div>
+    <div class="home-menu">
+      <div class="menu-card" onclick="go(2)"><span class="menu-icon">💌</span><b>Birthday Message</b><div class="small">A special wish for you</div></div>
+      <div class="menu-card" onclick="go(3)"><span class="menu-icon">📸</span><b>Memories</b><div class="small">Photos & beautiful moments</div></div>
+      <div class="menu-card" onclick="go(4)"><span class="menu-icon">🎬</span><b>Videos</b><div class="small">Watch your memories</div></div>
+      <div class="menu-card" onclick="go(5)"><span class="menu-icon">🌙</span><b>Urdu Poetry</b><div class="small">A little Urdu magic</div></div>
+      <div class="menu-card" onclick="go(6)"><span class="menu-icon">🤲</span><b>Prayers</b><div class="small">Blessings & wishes</div></div>
+      <div class="menu-card" onclick="go(8)"><span class="menu-icon">🎁</span><b>Final Surprise</b><div class="small">Something special</div></div>
+    </div>
+    <div class="birthday-note">
+      <p><b>Happy Birthday, dear! 🥰</b><br>May God bless you with a bundle of blessings and happiness, give you a long and beautiful life, and make your future bright, peaceful and full of success. 😇✨💖</p>
+    </div>
+    <div class="letter">
+      <div class="center"><h2 class="script gold">💌 Open My Letter</h2><p>Click below and let the message write itself.</p><button class="btn goldbtn" onclick="typeLetter()">Open My Letter ❤️</button></div>
+      <div class="letter-paper" style="margin-top:16px"><h3>For Jessica…</h3><div id="typedLetter" class="typing">Click “Open My Letter” to begin…</div></div>
+    </div>
+    <div class="cake-area">
+      <h2 class="script gold">🎂 Make a Birthday Wish</h2>
+      <div class="cake" onclick="blowCandles()" title="Click the cake">
+        <div class="cake-base"></div><div class="cake-top"></div>
+        <div class="candle c1"></div><div class="candle c2"></div><div class="candle c3"></div>
+        <div class="flame f1"></div><div class="flame f2"></div><div class="flame f3"></div>
+      </div>
+      <div class="small">Click the cake to make a wish ✨</div>
+      <div class="gift" onclick="openGift()" title="Open the gift">🎁</div>
+      <div id="giftMessage" class="gift-message"><h2 class="script gold">Your Surprise 💝</h2><p class="footer-msg">Jessica, may your new year of life be filled with peaceful mornings, genuine smiles, beautiful opportunities and people who truly value your heart. Keep shining, keep smiling, and keep being wonderfully you. 🎂👑💖</p></div>
+    </div>
+    <button class="btn goldbtn" onclick="go(2)">Start the surprise ✨</button>
+  </div>
+</section>
+
+<!-- PAGE 2 -->
+<section id="p2" class="page">
+  <div class="card center">
+    <img class="hero-img" src="media/birthday2.png" alt="Birthday artwork" onclick="openImage(this.src)">
+    <h2 class="script gold">A special birthday moment 💖</h2>
+    <p>Some pictures say what words cannot. May this beautiful day stay in your heart forever.</p>
+    <div class="pager"><button class="btn" onclick="go(1)">← Home</button><button class="btn" onclick="go(3)">Next → Photos 📸</button></div>
+  </div>
+</section>
+
+<!-- PAGE 3 -->
+<section id="p3" class="page">
+  <div class="card">
+    <div class="center">
+      <h2 class="script gold">Our little gallery ✨</h2>
+      <p>Tap any picture to open it larger.</p>
+    </div>
+    <div class="gallery">
+      <img src="media/birthday1.png" onclick="openImage(this.src)" alt="Birthday memory">
+      <img src="media/birthday2.png" onclick="openImage(this.src)" alt="Birthday artwork">
+      <img src="media/jessica1.png" onclick="openImage(this.src)" alt="Jessica">
+      <img src="media/jessica2.png" onclick="openImage(this.src)" alt="Jessica">
+      <img src="media/jessica3.jpg" onclick="openImage(this.src)" alt="Jessica">
+      <img src="media/jessica4.jpg" onclick="openImage(this.src)" alt="Jessica">
+    </div>
+    <div class="center" style="margin-top:22px">
+      <div class="pager"><button class="btn" onclick="go(2)">← Previous</button><button class="btn" onclick="go(4)">Next → Videos 🎬</button></div>
+    </div>
+  </div>
+</section>
+
+<!-- PAGE 4 -->
+<section id="p4" class="page">
+  <div class="card">
+    <div class="center">
+      <h2 class="script gold">Birthday memories 🎬</h2>
+      <p>Tap the play button on either video. The controls are enabled for mobile too.</p>
+    </div>
+    <div class="video-grid">
+      <div>
+        <video controls playsinline preload="metadata" poster="media/birthday1.png">
+          <source src="media/video1.mp4" type="video/mp4">
+          Your browser does not support video.
+        </video>
+        <h3 class="center">Memory Video 1 💕</h3>
+      </div>
+      <div>
+        <video controls playsinline preload="metadata" poster="media/birthday2.png">
+          <source src="media/video2.mp4" type="video/mp4">
+          Your browser does not support video.
+        </video>
+        <h3 class="center">Memory Video 2 ✨</h3>
+      </div>
+    </div>
+    <div class="center">
+      <div class="pager"><button class="btn" onclick="go(3)">← Previous</button><button class="btn" onclick="go(5)">Next → Poetry 🌙</button></div>
+    </div>
+  </div>
+</section>
+
+<!-- PAGE 5 -->
+<section id="p5" class="page">
+  <div class="card">
+    <div class="center">
+      <h2 class="script gold">کچھ خوبصورت باتیں</h2>
+      <p>For a beautiful soul — with love, prayers and a little Urdu magic.</p>
+    </div>
+    <div class="poetry">
+      ہزاروں خواہشیں ایسی کہ ہر خواہش پہ دم نکلے<br>
+      بہت نکلے مرے ارمان لیکن پھر بھی کم نکلے
+      <div class="small gold">— مرزا غالب</div>
+    </div>
+    <div class="poetry">
+      تمہاری مسکراہٹ کے لیے،<br>
+      ہر دعا میں ایک خوبصورت سا لفظ رکھ دیا ہے۔ 💗
+    </div>
+    <div class="poetry">
+      یہ دن تمہارے نام، یہ خوشیاں تمہارے نام،<br>
+      تم جہاں رہو، وہاں محبت کا موسم رہے۔ 🌸
+    </div>
+    <div class="center">
+      <div class="pager"><button class="btn" onclick="go(4)">← Previous</button><button class="btn" onclick="go(6)">Next → Wishes 💌</button></div>
+    </div>
+  </div>
+</section>
+
+<!-- PAGE 6 -->
+<section id="p6" class="page">
+  <div class="card">
+    <div class="center">
+      <h2 class="script gold">A page full of prayers 💖</h2>
+      <p>Because one wish was not enough...</p>
+    </div>
+    <div class="repeats">
+      <div class="repeat-card">
+        <h3>God bless you, Jessica ✨</h3>
+        <div id="blessList"></div>
+      </div>
+      <div class="repeat-card">
+        <h3>Always be Happy Numoni 👑</h3>
+        <div id="happyList"></div>
+      </div>
+      <div class="repeat-card">
+        <h3>Sorry dear for everything 💗</h3>
+        <div id="sorryList"></div>
+      </div>
+    </div>
+    <div class="counter-box center">
+      <div class="counter"><strong>25×</strong>God bless you</div>
+      <div class="counter"><strong>25×</strong>Always be Happy</div>
+      <div class="counter"><strong>50×</strong>Sorry dear</div>
+    </div>
+    <div class="center" style="margin-top:24px">
+      <div class="pager"><button class="btn" onclick="go(5)">← Previous</button><button class="btn goldbtn" onclick="go(7)">Next → Final message 🌹</button></div>
+    </div>
+  </div>
+</section>
+
+<!-- PAGE 7 -->
+<section id="p7" class="page">
+  <div class="card center">
+    <div class="script gold" style="font-size:58px">One last thing...</div>
+    <div class="poetry">
+      دل ہی تو ہے نہ سنگ و خشت، درد سے بھر نہ آئے کیوں<br>
+      روئیں گے ہم ہزار بار، کوئی ہمیں ستائے کیوں
+      <div class="small gold">— مرزا غالب</div>
+    </div>
+    <h2 class="glow">Jessica, stay blessed. 💖</h2>
+    <p class="footer-msg">
+      Meri dua hai ke Allah tumhari zindagi ko khushiyon, sukoon, sehat,
+      kamyabi aur mohabbat se bhar de. Tumhari har achi dua qabool ho,
+      har mushkil asaan ho, aur tum hamesha muskurati raho. Ameen. 🤲✨
+    </p>
+    <p class="footer-msg">
+      <b>Happy Birthday, Jessica — Always be Happy, Numoni. 👑🌸</b>
+    </p>
+    <div class="pager"><button class="btn" onclick="go(6)">← Previous</button><button class="btn goldbtn" onclick="go(8)">Open the secret surprise 🎁</button><button class="btn" onclick="go(1)">Home 🏠</button></div>
+  </div>
+</section>
+
+<!-- PAGE 8: SPECIAL SURPRISE -->
+<section id="p8" class="page">
+  <div class="card center surprise">
+    <div class="script gold" style="font-size:60px">Just for you... 🎁</div>
+    <h1 class="glow">One More Surprise 💝</h1>
+    <p>Close your eyes for a second, make a beautiful wish, and then open them. ✨</p>
+    <div class="birthday-note">
+      <p>Dear Jessica, may every new morning bring you another reason to smile, every difficult road become easier, and every dream in your heart find its way into reality. May your life be surrounded by love, peace, blessings and beautiful memories. 🥰😇🌸</p>
+    </div>
+    <h2 class="script rose">You deserve all the happiness in the world. 💖</h2>
+    <p class="footer-msg"><b>Happy Birthday, dear Jessica! 🎂👑</b><br>Stay blessed • Stay happy • Keep shining ✨</p>
+    <div class="pager"><button class="btn" onclick="burst(60)">Make it sparkle ✨</button><button class="btn" onclick="go(1)">Back to Home 🏠</button></div>
+  </div>
+</section>
+
+<div id="modal" class="modal" onclick="closeImage()">
+  <span class="close">×</span>
+  <img id="modalImg" alt="Full size" onclick="event.stopPropagation()">
+</div>
+
+<div id="nav" class="nav" style="display:none">
+  <button onclick="go(1)">Home</button>
+  <button onclick="go(2)">Message</button>
+  <button onclick="go(3)">Photos</button>
+  <button onclick="go(4)">Videos</button>
+  <button onclick="go(5)">Poetry</button>
+  <button onclick="go(6)">Wishes</button>
+  <button onclick="go(7)">Final</button><button onclick="go(8)">🎁 Surprise</button>
+</div>
+
+<audio id="song" preload="auto" loop>
+  <source src="media/birthday-song.mp4" type="video/mp4">
+</audio>
+
+<script>
+let unlocked = false;
+let entered = false;
+let countdownTimer = null;
+
+function enterExperience(){
+  entered = true;
+  const intro=document.getElementById("intro");
+  const login=document.getElementById("login");
+  intro.classList.remove("active");
+  login.classList.add("active","login-transition");
+  // Music begins only after the visitor explicitly clicks Enter.
+  startMusic();
+  setTimeout(()=>document.getElementById("username").focus(),450);
+}
+
+function unlock(){
+  const u = document.getElementById("username").value.trim();
+  const p = document.getElementById("password").value.trim();
+  const err = document.getElementById("loginError");
+
+  if(u === "Jessica" && p === "2127"){
+    unlocked = true;
+    document.getElementById("login").classList.remove("active");
+    document.getElementById("p1").classList.add("active");
+    document.getElementById("nav").style.display = "flex";
+    err.textContent = "";
+    startMusic();
+    burst();
+  }else{
+    err.textContent = "Incorrect username or password. Please try again.";
+  }
+}
+
+function nextBirthday(){
+  const now=new Date();
+  // The exact birthday date can be changed here later without touching the rest of the site.
+  // Default: celebrate on December 27 each year.
+  let d=new Date(now.getFullYear(),11,27,0,0,0);
+  if(d<=now) d=new Date(now.getFullYear()+1,11,27,0,0,0);
+  return d;
+}
+function updateCountdown(){
+  const diff=Math.max(0,nextBirthday()-new Date());
+  const total=Math.floor(diff/1000);
+  const days=Math.floor(total/86400), hours=Math.floor(total%86400/3600), minutes=Math.floor(total%3600/60), seconds=total%60;
+  document.getElementById("days").textContent=days;
+  document.getElementById("hours").textContent=String(hours).padStart(2,"0");
+  document.getElementById("minutes").textContent=String(minutes).padStart(2,"0");
+  document.getElementById("seconds").textContent=String(seconds).padStart(2,"0");
+}
+updateCountdown();
+countdownTimer=setInterval(updateCountdown,1000);
+
+function typeLetter(){
+  const el=document.getElementById("typedLetter");
+  const text=`Dear Jessica,\n\nOn your special day, I just want you to know how precious your smile and your presence are. May every chapter ahead bring you closer to the dreams you carry in your heart.\n\nMay God bless you with happiness, peace, success, beautiful memories and a life full of reasons to smile. Keep shining, keep laughing, and always remember that you are deeply special.\n\nHappy Birthday, Jessica. 🎂💖\n\n— With lots of love & prayers`;
+  el.textContent="";
+  let i=0;
+  const tick=()=>{ if(i<text.length){el.textContent+=text[i++]; setTimeout(tick,text[i-1]==="\n"?180:28);} };
+  tick(); burst(12);
+}
+function blowCandles(){
+  document.querySelectorAll(".flame").forEach(f=>f.style.display="none");
+  burst(40);
+  setTimeout(()=>document.querySelectorAll(".flame").forEach(f=>f.style.display="block"),3200);
+}
+function openGift(){
+  document.getElementById("giftMessage").classList.add("show");
+  burst(65);
+}
+
+function togglePassword(){
+  const p=document.getElementById("password");
+  p.type=document.getElementById("showPass").checked ? "text" : "password";
+}
+
+function stopVideos(){
+  document.querySelectorAll("video").forEach(v=>{
+    if(!v.paused){ v.pause(); }
+  });
+  if(unlocked && document.getElementById("song").paused) document.getElementById("song").play().catch(()=>{});
+}
+
+function startMusic(){
+  const audio = document.getElementById("song");
+  audio.play().catch(()=>{});
+}
+
+function go(n){
+  if(!unlocked) return;
+  stopVideos();
+  document.querySelectorAll(".page").forEach(x=>x.classList.remove("active"));
+  document.getElementById("p"+n).classList.add("active");
+  window.scrollTo({top:0,behavior:"smooth"});
+  burst(14);
+}
+
+function openImage(src){
+  document.getElementById("modalImg").src = src;
+  document.getElementById("modal").classList.add("show");
+}
+function closeImage(){
+  document.getElementById("modal").classList.remove("show");
+}
+
+function fillList(id, textValue, count){
+  const el=document.getElementById(id);
+  for(let i=1;i<=count;i++){
+    const d=document.createElement("div");
+    d.textContent=i+". "+textValue;
+    el.appendChild(d);
+  }
+}
+fillList("blessList","God bless you, Jessica",25);
+fillList("happyList","Always be Happy Numoni",25);
+fillList("sorryList","Sorry dear for everything",50);
+
+
+const audio = document.getElementById("song");
+let musicWasPlayingBeforeVideo = false;
+document.querySelectorAll("video").forEach(video => {
+  video.addEventListener("play", () => {
+    musicWasPlayingBeforeVideo = !audio.paused;
+    audio.pause();
+  });
+  video.addEventListener("ended", () => {
+    if(musicWasPlayingBeforeVideo && unlocked) audio.play().catch(()=>{});
+    musicWasPlayingBeforeVideo = false;
+  });
+});
+
+function butterfly(){
+  const el=document.createElement("div");
+  el.className="float";
+  el.textContent=["🦋","🦋","🦋"][Math.floor(Math.random()*3)];
+  el.style.left=(Math.random()*100)+"vw";
+  el.style.fontSize=(18+Math.random()*24)+"px";
+  el.style.animationDuration=(7+Math.random()*8)+"s";
+  document.body.appendChild(el);
+  setTimeout(()=>el.remove(),16000);
+}
+setInterval(butterfly,900);
+for(let i=0;i<7;i++) setTimeout(butterfly,i*300);
+
+function burst(n=28){
+  const symbols=["💖","💕","✨","🌸","💗","🎉"];
+  for(let i=0;i<n;i++){
+    const c=document.createElement("div");
+    c.className="confetti";
+    c.textContent=symbols[Math.floor(Math.random()*symbols.length)];
+    c.style.left=(Math.random()*100)+"vw";
+    c.style.animationDelay=(Math.random()*0.7)+"s";
+    c.style.fontSize=(12+Math.random()*18)+"px";
+    document.body.appendChild(c);
+    setTimeout(()=>c.remove(),4200);
+  }
+}
+</script>
+
+<script>
+/* Birthday music/video controller */
+(function () {
+  function setupBirthdayMedia() {
+    const music = document.querySelector('audio');
+    const videos = Array.from(document.querySelectorAll('video'));
+    if (!music) return;
+
+    let birthdayUnlocked = false;
+    let pausedByVideo = false;
+
+    music.pause();
+    music.autoplay = false;
+
+    function resumeMusic() {
+      if (!birthdayUnlocked) return;
+      if (videos.some(v => !v.paused && !v.ended)) return;
+      music.play().catch(() => {});
+    }
+
+    videos.forEach(video => {
+      video.addEventListener('play', () => {
+        videos.forEach(other => {
+          if (other !== video) other.pause();
+        });
+        if (!music.paused) {
+          pausedByVideo = true;
+          music.pause();
+        }
+      });
+
+      video.addEventListener('pause', () => {
+        if (pausedByVideo) {
+          pausedByVideo = false;
+          resumeMusic();
+        }
+      });
+
+      video.addEventListener('ended', () => {
+        if (pausedByVideo) {
+          pausedByVideo = false;
+          resumeMusic();
+        }
+      });
+    });
+
+    window.startBirthdayMusic = function () {
+      birthdayUnlocked = true;
+      resumeMusic();
+      const welcome = document.getElementById('postLoginWelcome');
+      if (welcome) welcome.classList.add('show');
+    };
+
+    document.addEventListener('click', function (e) {
+      const el = e.target.closest('button, input[type="submit"], a');
+      if (!el) return;
+      const text = (el.textContent || el.value || '').toLowerCase();
+      if (/(unlock|enter|login|open).*?(birthday|story|surprise)|enter my birthday story|unlock my birthday/.test(text)) {
+        setTimeout(() => {
+          const login = document.querySelector('#login, .login, .login-screen, #loginScreen, .login-overlay');
+          const visible = login && getComputedStyle(login).display !== 'none' &&
+                          getComputedStyle(login).visibility !== 'hidden' &&
+                          login.getBoundingClientRect().height > 0;
+          if (!visible) window.startBirthdayMusic();
+        }, 250);
+      }
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', setupBirthdayMedia);
+  } else {
+    setupBirthdayMedia();
+  }
+})();
+</script>
+
+
+<div id="postLoginWelcome" class="post-login-welcome" aria-live="polite">
+  <div class="welcome-title">Welcome Numoni</div>
+  <div class="welcome-birthday">🎂 Happy Birthday 🎂</div>
+</div>
+<style>
+.post-login-welcome {
+  text-align:center;
+  margin: 18px auto 24px;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity .8s ease, transform .8s ease;
+  pointer-events:none;
+}
+.post-login-welcome.show { opacity:1; transform:translateY(0); }
+.welcome-title { font-size:clamp(28px,5vw,48px); font-weight:700; }
+.welcome-birthday { font-size:clamp(22px,4vw,34px); margin-top:8px; }
+</style>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  const welcome = document.getElementById('postLoginWelcome');
+  if (!welcome) return;
+  const reveal = () => welcome.classList.add('show');
+  const original = window.startBirthdayMusic;
+  window.startBirthdayMusic = function () {
+    if (typeof original === 'function') original();
+    reveal();
+  };
+});
+</script>
+
+</body>
+</html>
